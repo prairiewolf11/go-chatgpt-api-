@@ -1,0 +1,12 @@
+网友成功说明：
+https://www.nuomiphp.com/t/648945a8fe7f5e185278e003.html
+又折腾了一上午，已经成功的将 pandora 做为前端 go-chatgpt-api 做为后端跑起来了，来回复一下解决方案
+
+1. 正常启动一个 go-chatgpt-api
+2. 启动 pandora 的时候设置 CHATGPT_API_PREFIX 变量指定 go-chatgpt-api 的请求地址
+3. 使用 Nginx 反向代理 go-chatgpt-api 端口，并对来自 pandora 请求进行修改
+贴一下 pandora 和 nginx 的配置
+
+
+主要是验证的 header 名称和请求的路径需要用 nginx 修改一下
+然后看 go-chatgpt-api 的日志，应该就能看到请求成功了
